@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.contener{
+    display: flex;
+    gap: 50px;
+    padding-top: 200px ;
+     
+}
+
+.heart {
+    width: 50px;
+    height: 50px; 
+    background-color: red;
+    transform: rotate(45deg);
+    position: relative;
+}  
+
+.heart::before,
+.heart::after {
+    content : '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    animation-duration: 3s;
+    animation-name: color;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+ 
+}
+
+.heart::before {
+    top: -30px;
+    left: 0;
+} 
+.heart::after {
+    top: 0;
+    left: -30px;
+}  
+
+.slidein {
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes color {
+    from {
+        background-color: red;
+    } 
+    to {
+        background-color:  black;
+    }
+}
+
+@keyframes slidein {
+   
+        from {
+         margin-left: 300px;
+        
+         
+        }
+      
+        to {
+          margin-left: 0%;
+          background-color: black;
+        }
+      }
+  
